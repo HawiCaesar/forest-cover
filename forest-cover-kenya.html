@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forest Cover Kenya</title>
+</head>
+<body>
+
+<div id="container" style="height: 600px; max-width: 900px; margin: 0 auto"></div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script>
+	$(function () {
+    $('#container').highcharts({
+
+        chart: {
+            type: 'bubble',
+            plotBorderWidth: 1,
+            zoomType: 'xy'
+        },
+
+        legend: {
+            enabled: false
+        },
+
+        title: {
+            text: 'Sugar and fat intake per country'
+        },
+
+        subtitle: {
+            text: 'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
+        },
+
+        xAxis: {
+            gridLineWidth: 1,
+            title: {
+                text: 'Daily fat intake'
+            },
+            labels: {
+                format: '{value} ha'
+            },
+            // plotLines: [{
+            //     color: 'black',
+            //     dashStyle: 'dot',
+            //     width: 2,
+            //     value: 65,
+            //     label: {
+            //         rotation: 0,
+            //         y: 15,
+            //         style: {
+            //             fontStyle: 'italic'
+            //         },
+            //         text: 'Safe fat intake 65g/day'
+            //     },
+            //     zIndex: 3
+            // }]
+        },
+
+        yAxis: {
+            startOnTick: false,
+            endOnTick: false,
+            title: {
+                text: 'Daily sugar intake'
+            },
+            labels: {
+                format: '{value} ha'
+            },
+            maxPadding: 0.2
+            // plotLines: [{
+            //     color: 'black',
+            //     dashStyle: 'dot',
+            //     width: 2,
+            //     value: 50,
+            //     label: {
+            //         align: 'right',
+            //         style: {
+            //             fontStyle: 'italic'
+            //         },
+            //         text: 'Forest ',
+            //         x: -10
+            //     },
+            //     zIndex: 3
+            // }]
+        },
+
+        tooltip: {
+            useHTML: true,
+            headerFormat: '<table>',
+            pointFormat: '<tr><th colspan="2"><h3>{point.county}</h3></th></tr>' +
+                '<tr><th>Forest Cover per Hectare:</th><td>{point.z} ha</td></tr>' +
+                '</tr>',
+            footerFormat: '</table>',
+            followPointer: true
+        },
+
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+
+        series: [{
+            data: [
+                { x: 1091197, y:1091, z:1091197, name: 'Bar', county: 'Baringo', color:'#234110'},
+                { x: 1091197, y:1091, z:274157, name: 'Bar', county: 'Baringo', color:'#234110'},
+                { x: 267196, y: 267, z: 267196, name: 'Bom', county: 'Bomet', color:'#c73510' },
+                { x: 267196, y: 267, z: 33927, name: 'Bom', county: 'Bomet', color:'#c73510' },
+                { x: 303123, y: 303, z: 303123, name: 'Bun', county: 'Bungoma', color:'#c73510' },
+                { x: 303123, y: 303, z: 45049, name: 'Bun', county: 'Bungoma', color:'#c73510' },
+                { x: 301805, y: 301, z: 301805, name: 'Bus', county: 'Busia',color:'#c73510'},
+                { x: 301805, y: 301, z: 1848, name: 'Bus', county: 'Busia',color:'#c73510'},
+                // { x: 26242, y: 30, z: 26242, name: 'Emb', county: 'Embu', color:'#c73510'},
+                // { x: 309264, y: 310, z: 309264, name: 'Gar', county: 'Garissa', color:'#234110'},
+                // { x: 12334, y: 10, z: 12334, name: 'Hom', county:'Homa Bay', color:'#c73510'},
+                // { x: 1356626, y:1300, z:1356626, name:'Isi', county:'Isiolo',color:'#145230'},
+                // { x: 156260, y:160, z:156260, name:'Kaj', county:'Kajiado',color:'#234110'},
+                // { x: 29656, y:30, z:29656, name:'Kak', county:'Kakamega', color:'#c73510'},
+                // { x: 54150, y:50, z:54150, name:'Ker',county:'Kericho', color:'#c73510'},
+                // { x: 42118, y:40, z:42118, name:'Kia', county:'Kiambu', color:'#c73510'},
+                // { x: 96115, y:90, z:96115, name:'Kil', county:'Kilifi',color:'#c73510'},
+                // { x: 30515, y:30, z:30515, name:'Kir', county:'Kirinyaga',color:'#c73510'},
+                // { x: 3456, y:3, z:3456, name: 'Kis', county:'Kisii', color:'#d0d08d'},
+                // { x: 1184, y:1, z:1184, name:'Kis', county:'Kisumu', color:'#d0d08d'},
+                // { x: 215340, y:220, z:215340, name:'Kit', county:'Kitui',color:'#234110'}
+            ]
+        }]
+
+    });
+});
+</script>
+</body>
+</html>
